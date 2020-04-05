@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="BaseEntities" EntityType="Model1.Store.BaseEntities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities_Movie" EntityType="Model1.Store.BaseEntities_Movie" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities_Person" EntityType="Model1.Store.BaseEntities_Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities_Photo" EntityType="Model1.Store.BaseEntities_Photo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities_MovieExtraProperty" EntityType="Model1.Store.BaseEntities_MovieExtraProperty" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities_PhotoExtraProperty" EntityType="Model1.Store.BaseEntities_PhotoExtraProperty" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MoviePerson" Association="Model1.Store.MoviePerson">
+      <End Role="Movie" EntitySet="BaseEntities_Movie" />
+      <End Role="Person" EntitySet="BaseEntities_Person" />
+    </AssociationSet>
+    <AssociationSet Name="PhotoPerson" Association="Model1.Store.PhotoPerson">
+      <End Role="Photo" EntitySet="BaseEntities_Photo" />
+      <End Role="Person" EntitySet="BaseEntities_Person" />
+    </AssociationSet>
+    <AssociationSet Name="MovieMovieExtraProperty" Association="Model1.Store.MovieMovieExtraProperty">
+      <End Role="Movie" EntitySet="BaseEntities_Movie" />
+      <End Role="MovieExtraProperty" EntitySet="BaseEntities_MovieExtraProperty" />
+    </AssociationSet>
+    <AssociationSet Name="PhotoPhotoExtraProperty" Association="Model1.Store.PhotoPhotoExtraProperty">
+      <End Role="Photo" EntitySet="BaseEntities_Photo" />
+      <End Role="PhotoExtraProperty" EntitySet="BaseEntities_PhotoExtraProperty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_inherits_BaseEntity" Association="Model1.Store.FK_Movie_inherits_BaseEntity">
+      <End Role="BaseEntity" EntitySet="BaseEntities" />
+      <End Role="Movie" EntitySet="BaseEntities_Movie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_inherits_BaseEntity" Association="Model1.Store.FK_Person_inherits_BaseEntity">
+      <End Role="BaseEntity" EntitySet="BaseEntities" />
+      <End Role="Person" EntitySet="BaseEntities_Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_inherits_BaseEntity" Association="Model1.Store.FK_Photo_inherits_BaseEntity">
+      <End Role="BaseEntity" EntitySet="BaseEntities" />
+      <End Role="Photo" EntitySet="BaseEntities_Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MovieExtraProperty_inherits_BaseEntity" Association="Model1.Store.FK_MovieExtraProperty_inherits_BaseEntity">
+      <End Role="BaseEntity" EntitySet="BaseEntities" />
+      <End Role="MovieExtraProperty" EntitySet="BaseEntities_MovieExtraProperty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhotoExtraProperty_inherits_BaseEntity" Association="Model1.Store.FK_PhotoExtraProperty_inherits_BaseEntity">
+      <End Role="BaseEntity" EntitySet="BaseEntities" />
+      <End Role="PhotoExtraProperty" EntitySet="BaseEntities_PhotoExtraProperty" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BaseEntities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseEntities_Movie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="PathChanged" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseEntities_Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Movie_Id" Type="int" Nullable="false" />
+    <Property Name="Photo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseEntities_Photo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Event" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="DateAdded" Type="datetime" Nullable="false" />
+    <Property Name="Place" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="PathChanged" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseEntities_MovieExtraProperty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="PropertyName" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="PropertyValue" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Movie_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseEntities_PhotoExtraProperty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="PropertyName" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="PropertyValue" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Photo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MoviePerson">
+    <End Role="Movie" Type="Model1.Store.BaseEntities_Movie" Multiplicity="1" />
+    <End Role="Person" Type="Model1.Store.BaseEntities_Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="Movie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhotoPerson">
+    <End Role="Photo" Type="Model1.Store.BaseEntities_Photo" Multiplicity="1" />
+    <End Role="Person" Type="Model1.Store.BaseEntities_Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Photo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="Photo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MovieMovieExtraProperty">
+    <End Role="Movie" Type="Model1.Store.BaseEntities_Movie" Multiplicity="1" />
+    <End Role="MovieExtraProperty" Type="Model1.Store.BaseEntities_MovieExtraProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovieExtraProperty">
+        <PropertyRef Name="Movie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PhotoPhotoExtraProperty">
+    <End Role="Photo" Type="Model1.Store.BaseEntities_Photo" Multiplicity="1" />
+    <End Role="PhotoExtraProperty" Type="Model1.Store.BaseEntities_PhotoExtraProperty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Photo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhotoExtraProperty">
+        <PropertyRef Name="Photo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_inherits_BaseEntity">
+    <End Role="BaseEntity" Type="Model1.Store.BaseEntities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Movie" Type="Model1.Store.BaseEntities_Movie" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_inherits_BaseEntity">
+    <End Role="BaseEntity" Type="Model1.Store.BaseEntities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Person" Type="Model1.Store.BaseEntities_Person" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_inherits_BaseEntity">
+    <End Role="BaseEntity" Type="Model1.Store.BaseEntities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Photo" Type="Model1.Store.BaseEntities_Photo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MovieExtraProperty_inherits_BaseEntity">
+    <End Role="BaseEntity" Type="Model1.Store.BaseEntities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MovieExtraProperty" Type="Model1.Store.BaseEntities_MovieExtraProperty" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovieExtraProperty">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhotoExtraProperty_inherits_BaseEntity">
+    <End Role="BaseEntity" Type="Model1.Store.BaseEntities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhotoExtraProperty" Type="Model1.Store.BaseEntities_PhotoExtraProperty" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PhotoExtraProperty">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BaseEntities" EntityType="Model1.BaseEntity" />
+          <AssociationSet Name="MoviePerson" Association="Model1.MoviePerson">
+            <End Role="Movie" EntitySet="BaseEntities" />
+            <End Role="Person" EntitySet="BaseEntities" />
+          </AssociationSet>
+          <AssociationSet Name="PhotoPerson" Association="Model1.PhotoPerson">
+            <End Role="Photo" EntitySet="BaseEntities" />
+            <End Role="Person" EntitySet="BaseEntities" />
+          </AssociationSet>
+          <AssociationSet Name="MovieMovieExtraProperty" Association="Model1.MovieMovieExtraProperty">
+            <End Role="Movie" EntitySet="BaseEntities" />
+            <End Role="MovieExtraProperty" EntitySet="BaseEntities" />
+          </AssociationSet>
+          <AssociationSet Name="PhotoPhotoExtraProperty" Association="Model1.PhotoPhotoExtraProperty">
+            <End Role="Photo" EntitySet="BaseEntities" />
+            <End Role="PhotoExtraProperty" EntitySet="BaseEntities" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BaseEntity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Photo" BaseType="Model1.BaseEntity" >
+          <Property Name="Event" Type="String" Nullable="true" MaxLength="150" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="People" Relationship="Model1.PhotoPerson" FromRole="Photo" ToRole="Person" />
+          <Property Name="Place" Type="String" Nullable="true" MaxLength="150" />
+          <NavigationProperty Name="PhotoExtraProperties" Relationship="Model1.PhotoPhotoExtraProperty" FromRole="Photo" ToRole="PhotoExtraProperty" />
+          <Property Name="Description" Type="String" Nullable="true" MaxLength="150" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="150" />
+          <Property Name="PathChanged" Type="Boolean" Nullable="false" DefaultValue="False" />
+        </EntityType>
+        <EntityType Name="Movie" BaseType="Model1.BaseEntity">
+          <Property Name="Name" Nullable="true" Type="String" MaxLength="150" />
+          <Property Name="DateAdded" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="People" Relationship="Model1.MoviePerson" FromRole="Movie" ToRole="Person" />
+          <NavigationProperty Name="MovieExtraProperties" Relationship="Model1.MovieMovieExtraProperty" FromRole="Movie" ToRole="MovieExtraProperty" />
+          <Property Name="Description" Type="String" Nullable="true" MaxLength="150" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="150" />
+          <Property Name="PathChanged" Type="Boolean" Nullable="false" DefaultValue="False" />
+        </EntityType>
+        <EntityType Name="Person" BaseType="Model1.BaseEntity" >
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" />
+          <NavigationProperty Name="Movie" Relationship="Model1.MoviePerson" FromRole="Person" ToRole="Movie" />
+          <NavigationProperty Name="Photo" Relationship="Model1.PhotoPerson" FromRole="Person" ToRole="Photo" />
+        </EntityType>
+        <Association Name="MoviePerson">
+          <End Type="Model1.Movie" Role="Movie" Multiplicity="1" />
+          <End Type="Model1.Person" Role="Person" Multiplicity="*" />
+        </Association>
+        <Association Name="PhotoPerson">
+          <End Type="Model1.Photo" Role="Photo" Multiplicity="1" />
+          <End Type="Model1.Person" Role="Person" Multiplicity="*" />
+        </Association>
+        <EntityType Name="MovieExtraProperty" BaseType="Model1.BaseEntity" >
+          <NavigationProperty Name="Movie" Relationship="Model1.MovieMovieExtraProperty" FromRole="MovieExtraProperty" ToRole="Movie" />
+          <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="150" />
+          <Property Name="PropertyValue" Type="String" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="PhotoExtraProperty" BaseType="Model1.BaseEntity" >
+          <NavigationProperty Name="Photo" Relationship="Model1.PhotoPhotoExtraProperty" FromRole="PhotoExtraProperty" ToRole="Photo" />
+          <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="150" />
+          <Property Name="PropertyValue" Type="String" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <Association Name="MovieMovieExtraProperty">
+          <End Type="Model1.Movie" Role="Movie" Multiplicity="1" />
+          <End Type="Model1.MovieExtraProperty" Role="MovieExtraProperty" Multiplicity="*" />
+        </Association>
+        <Association Name="PhotoPhotoExtraProperty">
+          <End Type="Model1.Photo" Role="Photo" Multiplicity="1" />
+          <End Type="Model1.PhotoExtraProperty" Role="PhotoExtraProperty" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="BaseEntities">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.BaseEntity)">
+        <MappingFragment StoreEntitySet="BaseEntities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Movie)">
+        <MappingFragment StoreEntitySet="BaseEntities_Movie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="PathChanged" ColumnName="PathChanged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Person)">
+        <MappingFragment StoreEntitySet="BaseEntities_Person">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Photo)">
+        <MappingFragment StoreEntitySet="BaseEntities_Photo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="PathChanged" ColumnName="PathChanged" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.MovieExtraProperty)">
+        <MappingFragment StoreEntitySet="BaseEntities_MovieExtraProperty">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.PhotoExtraProperty)">
+        <MappingFragment StoreEntitySet="BaseEntities_PhotoExtraProperty">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MoviePerson" TypeName="Model1.MoviePerson" StoreEntitySet="BaseEntities_Person">
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PhotoPerson" TypeName="Model1.PhotoPerson" StoreEntitySet="BaseEntities_Person">
+      <EndProperty Name="Photo">
+        <ScalarProperty Name="Id" ColumnName="Photo_Id" />
+      </EndProperty>
+      <EndProperty Name="Person">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MovieMovieExtraProperty" TypeName="Model1.MovieMovieExtraProperty" StoreEntitySet="BaseEntities_MovieExtraProperty">
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+      <EndProperty Name="MovieExtraProperty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PhotoPhotoExtraProperty" TypeName="Model1.PhotoPhotoExtraProperty" StoreEntitySet="BaseEntities_PhotoExtraProperty">
+      <EndProperty Name="Photo">
+        <ScalarProperty Name="Id" ColumnName="Photo_Id" />
+      </EndProperty>
+      <EndProperty Name="PhotoExtraProperty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

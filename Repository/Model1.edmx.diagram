@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5333431566044486a7a6d11cac5250a4" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="Model1.BaseEntity" PointX="3" PointY="1" Width="1.5" />
+        <EntityTypeShape EntityType="Model1.Photo" PointX="5.5" PointY="2.75" Width="1.5" />
+        <InheritanceConnector EntityType="Model1.Photo" />
+        <EntityTypeShape EntityType="Model1.Movie" PointX="0.75" PointY="2.75" Width="1.5" />
+        <InheritanceConnector EntityType="Model1.Movie" />
+        <EntityTypeShape EntityType="Model1.Person" Width="1.5" PointX="3" PointY="3" />
+        <InheritanceConnector EntityType="Model1.Person" />
+        <AssociationConnector Association="Model1.MoviePerson" />
+        <AssociationConnector Association="Model1.PhotoPerson" />
+        <EntityTypeShape EntityType="Model1.MovieExtraProperty" Width="1.5" PointX="0.625" PointY="5.875" />
+        <InheritanceConnector EntityType="Model1.MovieExtraProperty" />
+        <EntityTypeShape EntityType="Model1.PhotoExtraProperty" Width="1.5" PointX="5.375" PointY="6" />
+        <InheritanceConnector EntityType="Model1.PhotoExtraProperty" />
+        <AssociationConnector Association="Model1.MovieMovieExtraProperty" />
+        <AssociationConnector Association="Model1.PhotoPhotoExtraProperty" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
