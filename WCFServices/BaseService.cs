@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace WCFServices
 {
-    public class BaseService<TRepository, TEntity, TModel, TFilter> : IBaseService<TModel, TFilter>
+    public class BaseService<TRepository, TEntity, TModel, TFilter>
         where TEntity : BaseEntity, new()
         where TRepository : GenericRepository<TEntity>, new()
         where TModel : BaseModel, new()
