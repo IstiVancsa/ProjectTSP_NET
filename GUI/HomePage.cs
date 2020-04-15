@@ -29,126 +29,126 @@ namespace GUI
             this._personRepository = new PersonRepository();
         }
 
-        private void PopulateDBButton_Click(object sender, EventArgs e)
-        {
-            List<Photo> photos = new List<Photo>
-            {
-                new Photo
-                {
-                     DateAdded = DateTime.Now,
-                     Description = "Desctiption 1",
-                     Event = "Event 1",
-                     Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\2022-Tesla-Cybertruck-V1-1080.jpg",
-                     Place = "Place1"
-                },
-                new Photo
-                {
-                     DateAdded = DateTime.Now,
-                     Description = "Desctiption 2",
-                     Event = "Event 2",
-                     Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\2022-Tesla-Cybertruck-V2-1080.jpg",
-                     Place = "Place2"
-                },
-                new Photo
-                {
-                     DateAdded = DateTime.Now,
-                     Description = "Desctiption 3",
-                     Event = "Event 3",
-                     Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\images.jpg",
-                     Place = "Place3"
-                },
-                new Photo
-                {
-                     DateAdded = DateTime.Now,
-                     Description = "Desctiption 4",
-                     Event = "Event 4",
-                     Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\strv_s1_wallpaper_1920x1080.jpg",
-                     Place = "Place4"
-                },
-                new Photo
-                {
-                     DateAdded = DateTime.Now,
-                     Description = "Desctiption 5",
-                     Event = "Event 5",
-                     Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\tesla-roadster-4k-pd-1536x864.jpg",
-                     Place = "Place5"
-                }
-            };
+        //private void PopulateDBButton_Click(object sender, EventArgs e)
+        //{
+            //List<Photo> photos = new List<Photo>
+            //{
+            //    new Photo
+            //    {
+            //         DateAdded = DateTime.Now,
+            //         Description = "Desctiption 1",
+            //         Event = "Event 1",
+            //         Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\2022-Tesla-Cybertruck-V1-1080.jpg",
+            //         Place = "Place1"
+            //    },
+            //    new Photo
+            //    {
+            //         DateAdded = DateTime.Now,
+            //         Description = "Desctiption 2",
+            //         Event = "Event 2",
+            //         Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\2022-Tesla-Cybertruck-V2-1080.jpg",
+            //         Place = "Place2"
+            //    },
+            //    new Photo
+            //    {
+            //         DateAdded = DateTime.Now,
+            //         Description = "Desctiption 3",
+            //         Event = "Event 3",
+            //         Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\images.jpg",
+            //         Place = "Place3"
+            //    },
+            //    new Photo
+            //    {
+            //         DateAdded = DateTime.Now,
+            //         Description = "Desctiption 4",
+            //         Event = "Event 4",
+            //         Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\strv_s1_wallpaper_1920x1080.jpg",
+            //         Place = "Place4"
+            //    },
+            //    new Photo
+            //    {
+            //         DateAdded = DateTime.Now,
+            //         Description = "Desctiption 5",
+            //         Event = "Event 5",
+            //         Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\tesla-roadster-4k-pd-1536x864.jpg",
+            //         Place = "Place5"
+            //    }
+            //};
 
-            List<Movie> movies = new List<Movie>
-            {
-                new Movie
-                {
-                    DateAdded = DateTime.Now,
-                    Description = "Description 1",
-                    Name = "Movie name 1",
-                    Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Search_Algorithm_Computerphile.mp4"
-                },
-                new Movie
-                {
-                    DateAdded = DateTime.Now,
-                    Description = "Description 2",
-                    Name = "Movie name 2",
-                    Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Dijkstra_Algorithm_Computerphile.mp4"
-                },
-                new Movie
-                {
-                    DateAdded = DateTime.Now,
-                    Description = "Description 3",
-                    Name = "Movie name 3",
-                    Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Maze_Solving_Computerphile.mp4"
-                },
-                new Movie
-                {
-                    DateAdded = DateTime.Now,
-                    Description = "Description 4",
-                    Name = "Movie name 4",
-                    Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\A_Pathfinding.mp4"
-                },
-                new Movie
-                {
-                    DateAdded = DateTime.Now,
-                    Description = "Description 5",
-                    Name = "Movie name 5",
-                    Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Road_trip_planning.mp4"
-                }
-            };
+            //List<Movie> movies = new List<Movie>
+            //{
+            //    new Movie
+            //    {
+            //        DateAdded = DateTime.Now,
+            //        Description = "Description 1",
+            //        Name = "Movie name 1",
+            //        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Search_Algorithm_Computerphile.mp4"
+            //    },
+            //    new Movie
+            //    {
+            //        DateAdded = DateTime.Now,
+            //        Description = "Description 2",
+            //        Name = "Movie name 2",
+            //        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Dijkstra_Algorithm_Computerphile.mp4"
+            //    },
+            //    new Movie
+            //    {
+            //        DateAdded = DateTime.Now,
+            //        Description = "Description 3",
+            //        Name = "Movie name 3",
+            //        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Maze_Solving_Computerphile.mp4"
+            //    },
+            //    new Movie
+            //    {
+            //        DateAdded = DateTime.Now,
+            //        Description = "Description 4",
+            //        Name = "Movie name 4",
+            //        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\A_Pathfinding.mp4"
+            //    },
+            //    new Movie
+            //    {
+            //        DateAdded = DateTime.Now,
+            //        Description = "Description 5",
+            //        Name = "Movie name 5",
+            //        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Road_trip_planning.mp4"
+            //    }
+            //};
 
-            List<Person> people = new List<Person>
-            {
-                new Person
-                {
-                    Name = "Gigel",
-                    Movie = new Movie
-                    {
-                        DateAdded = DateTime.Now,
-                        Description = "Description 1",
-                        Name = "Movie name 1",
-                        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Search_Algorithm_Computerphile.mp4"
-                    },
-                    Photo = new Photo
-                    {
-                        DateAdded = DateTime.Now,
-                        Description = "Desctiption 1",
-                        Event = "Event 1",
-                        Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\2022-Tesla-Cybertruck-V1-1080.jpg",
-                        Place = "Place1"
-                    }
-                }
-            };
+            //List<Person> people = new List<Person>
+            //{
+            //    new Person
+            //    {
+            //        Name = "Gigel",
+            //        Movie = new Movie
+            //        {
+            //            DateAdded = DateTime.Now,
+            //            Description = "Description 1",
+            //            Name = "Movie name 1",
+            //            Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Movies\Search_Algorithm_Computerphile.mp4"
+            //        },
+            //        Photo = new Photo
+            //        {
+            //            DateAdded = DateTime.Now,
+            //            Description = "Desctiption 1",
+            //            Event = "Event 1",
+            //            Path = @"D:\Info\Anul3\Sem2\TSP_NET\GitProj\Proiect1\Repository\GUI\Resouces\Images\2022-Tesla-Cybertruck-V1-1080.jpg",
+            //            Place = "Place1"
+            //        }
+            //    }
+            //};
 
-            foreach (Movie movie in movies)
-                _movieRepository.AddItem(movie);
-            _movieRepository.SaveChanges();
+            //foreach (Movie movie in movies)
+            //    _movieRepository.AddItem(movie);
+            //_movieRepository.SaveChanges();
 
-            foreach (Photo photo in photos)
-                _photoRepository.AddItem(photo);
-            _photoRepository.SaveChanges();
+            //foreach (Photo photo in photos)
+            //    _photoRepository.AddItem(photo);
+            //_photoRepository.SaveChanges();
 
-            foreach (Person person in people)
-                _personRepository.AddItem(person);
-            _personRepository.SaveChanges();
-        }
+            //foreach (Person person in people)
+            //    _personRepository.AddItem(person);
+            //_personRepository.SaveChanges();
+        //}
 
         private void StartButton_Click(object sender, EventArgs e)
         {

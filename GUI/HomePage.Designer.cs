@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
-            this.PopulateDBButton = new System.Windows.Forms.Button();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.VideoPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.StartButton = new System.Windows.Forms.Button();
@@ -47,23 +46,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.VideoPlayer)).BeginInit();
             this.SuspendLayout();
             // 
-            // PopulateDBButton
-            // 
-            this.PopulateDBButton.Location = new System.Drawing.Point(9, 0);
-            this.PopulateDBButton.Margin = new System.Windows.Forms.Padding(2);
-            this.PopulateDBButton.Name = "PopulateDBButton";
-            this.PopulateDBButton.Size = new System.Drawing.Size(1042, 19);
-            this.PopulateDBButton.TabIndex = 0;
-            this.PopulateDBButton.Text = "Populate DB";
-            this.PopulateDBButton.UseVisualStyleBackColor = true;
-            this.PopulateDBButton.Click += new System.EventHandler(this.PopulateDBButton_Click);
-            // 
             // PictureBox
             // 
-            this.PictureBox.Location = new System.Drawing.Point(9, 24);
+            this.PictureBox.Location = new System.Drawing.Point(9, 11);
             this.PictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(495, 415);
+            this.PictureBox.Size = new System.Drawing.Size(495, 428);
             this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox.TabIndex = 1;
             this.PictureBox.TabStop = false;
@@ -71,11 +59,11 @@
             // VideoPlayer
             // 
             this.VideoPlayer.Enabled = true;
-            this.VideoPlayer.Location = new System.Drawing.Point(529, 29);
+            this.VideoPlayer.Location = new System.Drawing.Point(529, 11);
             this.VideoPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.VideoPlayer.Name = "VideoPlayer";
             this.VideoPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VideoPlayer.OcxState")));
-            this.VideoPlayer.Size = new System.Drawing.Size(522, 435);
+            this.VideoPlayer.Size = new System.Drawing.Size(522, 453);
             this.VideoPlayer.TabIndex = 2;
             // 
             // StartButton
@@ -213,7 +201,6 @@
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.VideoPlayer);
             this.Controls.Add(this.PictureBox);
-            this.Controls.Add(this.PopulateDBButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -229,8 +216,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button PopulateDBButton;
         private System.Windows.Forms.PictureBox PictureBox;
         private AxWMPLib.AxWindowsMediaPlayer VideoPlayer;
         private System.Windows.Forms.Button StartButton;
