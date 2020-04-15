@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="88cc6694-66e4-4c3a-b847-7c2a3007f273" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1239/API" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="API.xsd" MetadataType="Schema" ID="c4de050f-1745-496a-8251-15b7c5470a82" SourceId="1" SourceUrl="http://localhost:1239/API?xsd=xsd3" />
+    <MetadataFile FileName="API1.xsd" MetadataType="Schema" ID="2ff7417e-538a-4a48-a6ff-5ad48b5d0358" SourceId="1" SourceUrl="http://localhost:1239/API?xsd=xsd2" />
+    <MetadataFile FileName="API2.xsd" MetadataType="Schema" ID="b2ea70b9-9f24-4dde-a4ed-cc410ba3ebf2" SourceId="1" SourceUrl="http://localhost:1239/API?xsd=xsd1" />
+    <MetadataFile FileName="API3.xsd" MetadataType="Schema" ID="e17a7beb-da72-45a3-8708-bebaf717c95a" SourceId="1" SourceUrl="http://localhost:1239/API?xsd=xsd0" />
+    <MetadataFile FileName="MovieService.wsdl" MetadataType="Wsdl" ID="110ee720-7b49-41bc-b075-dcf6312aff62" SourceId="1" SourceUrl="http://localhost:1239/API?wsdl" />
+    <MetadataFile FileName="API.disco" MetadataType="Disco" ID="c1510cdb-9b75-483e-bdbf-887c17cf6ded" SourceId="1" SourceUrl="http://localhost:1239/API?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

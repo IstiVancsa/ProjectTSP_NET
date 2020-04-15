@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfMovieModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MovieModel" nillable="true" type="tns:MovieModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovieModel" nillable="true" type="tns:ArrayOfMovieModel" />
+  <xs:complexType name="MovieModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateAdded" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MovieExtraProperties" nillable="true" type="tns:ArrayOfMovieExtraPropertyModel" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PathChanged" type="xs:boolean" />
+          <xs:element minOccurs="0" name="People" nillable="true" type="tns:ArrayOfPersonModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MovieModel" nillable="true" type="tns:MovieModel" />
+  <xs:complexType name="BaseModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseModel" nillable="true" type="tns:BaseModel" />
+  <xs:complexType name="ArrayOfMovieExtraPropertyModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MovieExtraPropertyModel" nillable="true" type="tns:MovieExtraPropertyModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovieExtraPropertyModel" nillable="true" type="tns:ArrayOfMovieExtraPropertyModel" />
+  <xs:complexType name="MovieExtraPropertyModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Movie" nillable="true" type="tns:MovieModel" />
+          <xs:element minOccurs="0" name="PropertyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PropertyValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MovieExtraPropertyModel" nillable="true" type="tns:MovieExtraPropertyModel" />
+  <xs:complexType name="ArrayOfPersonModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonModel" nillable="true" type="tns:PersonModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonModel" nillable="true" type="tns:ArrayOfPersonModel" />
+  <xs:complexType name="PersonModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Movie" nillable="true" type="tns:MovieModel" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="tns:PhotoModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonModel" nillable="true" type="tns:PersonModel" />
+  <xs:complexType name="PhotoModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateAdded" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Event" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PathChanged" type="xs:boolean" />
+          <xs:element minOccurs="0" name="People" nillable="true" type="tns:ArrayOfPersonModel" />
+          <xs:element minOccurs="0" name="PhotoExtraProperties" nillable="true" type="tns:ArrayOfPhotoExtraPropertyModel" />
+          <xs:element minOccurs="0" name="Place" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhotoModel" nillable="true" type="tns:PhotoModel" />
+  <xs:complexType name="ArrayOfPhotoExtraPropertyModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhotoExtraPropertyModel" nillable="true" type="tns:PhotoExtraPropertyModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhotoExtraPropertyModel" nillable="true" type="tns:ArrayOfPhotoExtraPropertyModel" />
+  <xs:complexType name="PhotoExtraPropertyModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="tns:PhotoModel" />
+          <xs:element minOccurs="0" name="PropertyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PropertyValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PhotoExtraPropertyModel" nillable="true" type="tns:PhotoExtraPropertyModel" />
+</xs:schema>

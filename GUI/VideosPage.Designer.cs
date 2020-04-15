@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.BackButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.VideoList = new System.Windows.Forms.ListView();
+            this.GetAllVideos = new System.Windows.Forms.Button();
+            this.VideoName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateAdded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // BackButton
@@ -44,21 +48,54 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // listView1
+            // VideoList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 60);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(776, 378);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.VideoList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.VideoName,
+            this.DateAdded,
+            this.Description});
+            this.VideoList.FullRowSelect = true;
+            this.VideoList.GridLines = true;
+            this.VideoList.HideSelection = false;
+            this.VideoList.Location = new System.Drawing.Point(12, 60);
+            this.VideoList.Name = "VideoList";
+            this.VideoList.Size = new System.Drawing.Size(776, 378);
+            this.VideoList.TabIndex = 2;
+            this.VideoList.UseCompatibleStateImageBehavior = false;
+            this.VideoList.View = System.Windows.Forms.View.Details;
+            // 
+            // GetAllVideos
+            // 
+            this.GetAllVideos.Location = new System.Drawing.Point(362, 12);
+            this.GetAllVideos.Name = "GetAllVideos";
+            this.GetAllVideos.Size = new System.Drawing.Size(85, 34);
+            this.GetAllVideos.TabIndex = 3;
+            this.GetAllVideos.Text = "Get All Videos";
+            this.GetAllVideos.UseVisualStyleBackColor = true;
+            this.GetAllVideos.Click += new System.EventHandler(this.GetAllVideos_Click);
+            // 
+            // VideoName
+            // 
+            this.VideoName.Text = "Name";
+            this.VideoName.Width = 189;
+            // 
+            // DateAdded
+            // 
+            this.DateAdded.Text = "Date Added";
+            this.DateAdded.Width = 175;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 406;
             // 
             // VideosPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.GetAllVideos);
+            this.Controls.Add(this.VideoList);
             this.Controls.Add(this.BackButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "VideosPage";
@@ -71,6 +108,10 @@
         #endregion
 
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView VideoList;
+        private System.Windows.Forms.Button GetAllVideos;
+        private System.Windows.Forms.ColumnHeader VideoName;
+        private System.Windows.Forms.ColumnHeader DateAdded;
+        private System.Windows.Forms.ColumnHeader Description;
     }
 }

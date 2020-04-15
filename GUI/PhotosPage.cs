@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.PhotoService;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,21 @@ namespace GUI
             this.Hide();
             HomePage home = new HomePage();
             home.ShowDialog();
+        }
+
+        private async void GetAllPhotos_Click(object sender, EventArgs e)
+        {
+            PhotoServiceClient client = new PhotoServiceClient("NetTcpBinding_IPhotoService");
+            var photos = await client.GetAllAsync();
+            client.Close();
+            foreach (var photo in photos)
+            {
+                ListViewItem item = new ListViewItem(photo.Event);
+                item.SubItems.Add(photo.DateAdded.ToString());
+                item.SubItems.Add(photo.Place);
+                item.SubItems.Add(photo.Description);
+                PhotoList.Items.Add(item);
+            }
         }
     }
 }

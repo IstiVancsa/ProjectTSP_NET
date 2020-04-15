@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\MovieService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PhotoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,38 @@
     <EmbeddedResource Include="VideosPage.resx">
       <DependentUpon>VideosPage.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\MovieService\API.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MovieService\API1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MovieService\API2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MovieService\API3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MovieService\GUI.MovieService.MovieModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MovieService\MovieService.wsdl" />
+    <None Include="Connected Services\PhotoService\GUI.PhotoService.PhotoModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PhotoService\Models.Filters.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PhotoService\Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PhotoService\service.wsdl" />
+    <None Include="Connected Services\PhotoService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PhotoService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -134,6 +178,19 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\PhotoService\configuration91.svcinfo" />
+    <None Include="Connected Services\PhotoService\configuration.svcinfo" />
+    <None Include="Connected Services\PhotoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\MovieService\API.disco" />
+    <None Include="Connected Services\MovieService\configuration91.svcinfo" />
+    <None Include="Connected Services\MovieService\configuration.svcinfo" />
+    <None Include="Connected Services\MovieService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Resouces\Images\2022-Tesla-Cybertruck-V1-1080.jpg" />
     <Content Include="Resouces\Images\2022-Tesla-Cybertruck-V2-1080.jpg" />
     <Content Include="Resouces\Images\images.jpg" />
@@ -144,6 +201,13 @@
     <Content Include="Resouces\Movies\Maze_Solving_Computerphile.mp4" />
     <Content Include="Resouces\Movies\A_Pathfinding.mp4" />
     <Content Include="Resouces\Movies\Road_trip_planning.mp4" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MovieService\" />
+    <WCFMetadataStorage Include="Connected Services\PhotoService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

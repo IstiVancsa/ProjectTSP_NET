@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.BackButton = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.PhotoList = new System.Windows.Forms.ListView();
+            this.Event = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateAdded = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Place = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GetAllPhotos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BackButton
@@ -44,21 +49,60 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // listView1
+            // PhotoList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 58);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(776, 380);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.PhotoList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Event,
+            this.DateAdded,
+            this.Place,
+            this.Description});
+            this.PhotoList.FullRowSelect = true;
+            this.PhotoList.GridLines = true;
+            this.PhotoList.HideSelection = false;
+            this.PhotoList.Location = new System.Drawing.Point(12, 58);
+            this.PhotoList.Name = "PhotoList";
+            this.PhotoList.Size = new System.Drawing.Size(776, 380);
+            this.PhotoList.TabIndex = 1;
+            this.PhotoList.UseCompatibleStateImageBehavior = false;
+            this.PhotoList.View = System.Windows.Forms.View.Details;
+            // 
+            // Event
+            // 
+            this.Event.Text = "Event";
+            this.Event.Width = 104;
+            // 
+            // DateAdded
+            // 
+            this.DateAdded.Text = "Date Added";
+            this.DateAdded.Width = 161;
+            // 
+            // Place
+            // 
+            this.Place.Text = "Place";
+            this.Place.Width = 146;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Description";
+            this.Description.Width = 358;
+            // 
+            // GetAllPhotos
+            // 
+            this.GetAllPhotos.Location = new System.Drawing.Point(366, 12);
+            this.GetAllPhotos.Name = "GetAllPhotos";
+            this.GetAllPhotos.Size = new System.Drawing.Size(88, 32);
+            this.GetAllPhotos.TabIndex = 2;
+            this.GetAllPhotos.Text = "Get All Photos";
+            this.GetAllPhotos.UseVisualStyleBackColor = true;
+            this.GetAllPhotos.Click += new System.EventHandler(this.GetAllPhotos_Click);
             // 
             // PhotosPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.GetAllPhotos);
+            this.Controls.Add(this.PhotoList);
             this.Controls.Add(this.BackButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "PhotosPage";
@@ -71,6 +115,11 @@
         #endregion
 
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView PhotoList;
+        private System.Windows.Forms.Button GetAllPhotos;
+        private System.Windows.Forms.ColumnHeader Event;
+        private System.Windows.Forms.ColumnHeader DateAdded;
+        private System.Windows.Forms.ColumnHeader Place;
+        private System.Windows.Forms.ColumnHeader Description;
     }
 }

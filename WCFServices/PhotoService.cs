@@ -1,0 +1,19 @@
+﻿using Models;
+using Models.Filters;
+using Repository;
+using Repository.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
+
+namespace WCFServices
+{
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PhotoRepositoryService" in both code and config file together.
+    public class PhotoService : BaseService<PhotoRepository, Photo, PhotoModel, PhotoFilter>, IPhotoService
+    {
+
+    }
+}
