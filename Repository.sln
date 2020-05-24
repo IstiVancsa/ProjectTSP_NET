@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieHost", "MovieHost\MovieHost.csproj", "{457EAD83-1200-4608-83D5-D46DA7EB78B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET.CORE.UI", "ASP.NET.CORE.UI\ASP.NET.CORE.UI.csproj", "{AF43E39B-40DB-45F0-A99C-A5B4F37D7D68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{457EAD83-1200-4608-83D5-D46DA7EB78B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{457EAD83-1200-4608-83D5-D46DA7EB78B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{457EAD83-1200-4608-83D5-D46DA7EB78B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF43E39B-40DB-45F0-A99C-A5B4F37D7D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF43E39B-40DB-45F0-A99C-A5B4F37D7D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF43E39B-40DB-45F0-A99C-A5B4F37D7D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF43E39B-40DB-45F0-A99C-A5B4F37D7D68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

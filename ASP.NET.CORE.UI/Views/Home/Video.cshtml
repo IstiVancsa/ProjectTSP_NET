@@ -1,0 +1,31 @@
+﻿@model VideoViewModel
+@{
+    ViewData["Title"] = "Video";
+}
+<h1>Video</h1>
+
+<table style="width:100%">
+    <tr>
+        <th>Date Added</th>
+        <th>Description</th>
+        <th>ID</th>
+        <th>Name</th>
+        <td>Path</td>
+        <td>Path Changed</td>
+    </tr>
+    @foreach (var photo in Model.Videos)
+    {
+<tr>
+    <td>@photo.DateAdded</td>
+    <td>@photo.Description</td>
+    <td>@photo.Id</td>
+    <td>@photo.Name</td>
+    <td>@photo.Path</td>
+    <td>@photo.PathChanged</td>
+    <td>
+        <button onclick="@Model.ShowExtraProperties(photo)">Show Extra Properties</button>
+    </td>
+</tr>
+    }
+</table>
+

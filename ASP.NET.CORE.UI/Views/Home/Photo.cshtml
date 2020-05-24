@@ -1,0 +1,35 @@
+﻿@model PhotoViewModel
+@{
+    ViewData["Title"] = "Photo";
+}
+<h1>@ViewData["Title"]</h1>
+
+<table style="width:100%">
+    <tr>
+        <th>Date Added</th>
+        <th>Description</th>
+        <th>Event</th>
+        <th>ID</th>
+        <th>Path</th>
+        <th>Path Changed</th>
+        <th>Place</th>
+        <th></th>
+    </tr>
+    @foreach (var photo in Model.Photos)
+    {
+        <tr>
+            <td>@photo.DateAdded</td>
+            <td>@photo.Description</td>
+            <td>@photo.Event</td>
+            <td>@photo.Id</td>
+            <td>@photo.Path</td>
+            <td>@photo.PathChanged</td>
+            <td>@photo.Place</td>
+            <td>
+                <button onclick="@Model.ShowExtraProperties(photo)">Show Extra Properties</button>
+            </td>
+        </tr>
+    }
+</table>
+
+
