@@ -1,0 +1,39 @@
+﻿@page "/Videos"
+@model VideoPageModel
+
+<form>
+    <p>
+        Search :
+        <input type="text" asp-for="SearchText" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table style="width:100%">
+    <tr>
+        <th>Date Added</th>
+        <th>Description</th>
+        <th>ID</th>
+        <th>Name</th>
+        <td>Path</td>
+        <td>Path Changed</td>
+    </tr>
+    @foreach (var video in Model.Videos)
+    {
+        <tr>
+            <td>@video.DateAdded</td>
+            <td>@video.Description</td>
+            <td>@video.Id</td>
+            <td>@video.Name</td>
+            <td>@video.Path</td>
+            <td>@video.PathChanged</td>
+            <td>
+                <form method="get">
+                    <button type="submit" asp-page="VideoDetail" asp-route-id="@video.Id">Show Extra Properties</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+We found: @Model.Total videos

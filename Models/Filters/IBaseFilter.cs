@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Models.Filters
 {
-    public interface IBaseFilter<TModel>
-        where TModel : BaseModel
+    public interface IBaseFilter<TEntity>
+        where TEntity : BaseEntity
     {
         int? Id { get; set; }
-        Expression<Func<TModel, bool>> GetFilter();
+        Expression<Func<TEntity, bool>> GetFilter();
     }
 }

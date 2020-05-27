@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,13 +9,13 @@ using Utils;
 
 namespace Models.Filters
 {
-    public class MovieExtraPropertyFilter : IBaseFilter<MovieExtraPropertyModel>
+    public class MovieExtraPropertyFilter : IBaseFilter<MovieExtraProperty>
     {
         public int? Id { get; set; }
 
-        public Expression<Func<MovieExtraPropertyModel, bool>> GetFilter()
+        public Expression<Func<MovieExtraProperty, bool>> GetFilter()
         {
-            Expression<Func<MovieExtraPropertyModel, bool>> filter = x => true;
+            Expression<Func<MovieExtraProperty, bool>> filter = x => true;
 
             if (Id.HasValue)
                 filter = filter.And(x => x.Id == Id);

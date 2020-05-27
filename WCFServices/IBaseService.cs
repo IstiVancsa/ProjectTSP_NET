@@ -12,9 +12,10 @@ using System.Threading.Tasks;
 namespace WCFServices
 {
     [ServiceContract]
-    public interface IBaseService<TModel, TFilter>
+    public interface IBaseService<TModel, TFilter, TEntity>
         where TModel : BaseModel, new()
-        where TFilter : IBaseFilter<TModel>
+        where TFilter : IBaseFilter<TEntity>
+        where TEntity : BaseEntity
     {
         [OperationContract]
         List<TModel> GetAll();

@@ -1,8 +1,12 @@
-﻿@model PhotoViewModel
-@{
-    ViewData["Title"] = "Photo";
-}
-<h1>@ViewData["Title"]</h1>
+﻿@page "/Photos"
+@model PhotoPageModel
+<form>
+    <p>
+        Search :
+        <input type="text" asp-for="SearchText" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 
 <table style="width:100%">
     <tr>
@@ -26,10 +30,12 @@
             <td>@photo.PathChanged</td>
             <td>@photo.Place</td>
             <td>
-                <button onclick="@Model.ShowExtraProperties(photo)">Show Extra Properties</button>
+                <form method="get">
+                    <button type="submit" asp-page="PhotoDetailPage" asp-route-id="@photo.Id">Show Extra Properties</button>
+                </form>
             </td>
         </tr>
     }
 </table>
 
-
+We found: @Model.Total photos

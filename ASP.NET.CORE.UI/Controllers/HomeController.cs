@@ -25,23 +25,27 @@ namespace ASP.NET.CORE.UI.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Video()
+        public IActionResult VideoPage()
         {
-            MovieServiceClient client = new MovieServiceClient(MovieServiceClient.EndpointConfiguration.NetTcpBinding_IMovieService);
-            VideoViewModel videoViewModel = new VideoViewModel { Videos = await client.GetAllAsync() };
-            await client.CloseAsync();
-            return View(videoViewModel);
+            return View();
         }
 
-        public async Task<IActionResult> Photo()
+        public IActionResult PhotoPage()
         {
-            PhotoServiceClient client = new PhotoServiceClient(PhotoServiceClient.EndpointConfiguration.NetTcpBinding_IPhotoService);
-            PhotoViewModel photoViewModel = new PhotoViewModel { Photos = await client.GetAllAsync() };
-            await client.CloseAsync();
-            return View(photoViewModel);
+            return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult VideoDetailPage(string id)
+        {
+            return View();
+        }
+
+        public IActionResult PhotoDetailPage(string id)
         {
             return View();
         }

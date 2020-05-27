@@ -1,0 +1,24 @@
+﻿@page "/PhotoDetail/{id}"
+@model PhotoDetailPageModel
+<form>
+    <p>
+        Search :
+        <input type="text" asp-for="SearchText" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table style="width:100%">
+    <tr>
+        <th>Property Name</th>
+        <th>Propert Value</th>
+    </tr>
+    @foreach (var video in Model.ExtraProperties)
+    {
+        <tr>
+            <td>@video.PropertyName</td>
+            <td>@video.PropertyValue</td>
+        </tr>
+    }
+</table>
+We found: @Model.Total details for this photo

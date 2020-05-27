@@ -16,7 +16,7 @@ namespace WCFServices
         where TEntity : BaseEntity, new()
         where TRepository : GenericRepository<TEntity>, new()
         where TModel : BaseModel, new()
-        where TFilter : IBaseFilter<TModel>
+        where TFilter : IBaseFilter<TEntity>
     {
         #region Properties
         public TRepository BaseRepository { get; set; }
@@ -37,11 +37,8 @@ namespace WCFServices
         {
             Expression<Func<TEntity, bool>> myFilter;
             var modelFilter = filter.GetFilter();
-
-            var parameters = Expression.Parameter(typeof(TEntity));
-            myFilter = Expression.Lambda<Func<TEntity, bool>>(Expression.Invoke(modelFilter, Expression.Convert(parameters, typeof(TEntity))), parameters);
             
-            return this.BaseRepository.GetItems(myFilter).ToList()
+            return this.BaseRepository.GetItems(modelFilter).ToList()
                 .Select(x => Activator.CreateInstance(typeof(TModel), new object[] { x }) as TModel).ToList();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,13 +9,13 @@ using Utils;
 
 namespace Models.Filters
 {
-    public class PhotoFilter : IBaseFilter<PhotoModel>
+    public class PhotoFilter : IBaseFilter<Photo>
     {
         public int? Id { get; set; }
 
-        public Expression<Func<PhotoModel, bool>> GetFilter()
+        public Expression<Func<Photo, bool>> GetFilter()
         {
-            Expression<Func<PhotoModel, bool>> filter = x => true;
+            Expression<Func<Photo, bool>> filter = x => true;
 
             if (Id.HasValue)
                 filter = filter.And(x => x.Id == Id);
